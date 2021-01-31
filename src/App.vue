@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <p>{{ this.sayHello() }}</p>
+    <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
+    <p v-html="boldText"></p>
   </div>
 </template>
 
@@ -9,7 +10,11 @@
 export default {
   name: "App",
   data() {
-    return { title: "Hello Vue.js 2!", link: "https://github.com/qiuzhanghua" };
+    return {
+      title: "Hello Vue.js 2!",
+      link: "https://github.com/qiuzhanghua",
+      boldText: "<b>Bold Text</b>",
+    };
   },
   methods: {
     sayHello() {
