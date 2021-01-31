@@ -1,5 +1,10 @@
 <template>
-  <div id="app" @mousemove="updatePos">
+  <div
+    id="app"
+    @mousemove="updatePos"
+    :class="divClasses"
+    @click="divIsRed = !divIsRed"
+  >
     <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
     <p v-html="boldText"></p>
@@ -25,16 +30,27 @@ export default {
       x: 0,
       y: 0,
       text: "text",
+      divIsRed: false,
     };
   },
   computed: {
     tooLarge() {
       return this.count >= 100 ? ">= 100" : null;
     },
+    divClasses() {
+      return {
+        red: this.divIsRed,
+        blue: !this.divIsRed,
+      };
+    },
   },
   watch: {
     count(value, oldValue) {
       console.log(oldValue + " -> " + value);
+      // let that = this;
+      // setTimeout(function () {
+      //   that.count = 0;
+      // }, 2000);
     },
   },
   methods: {
@@ -82,6 +98,14 @@ a {
   text-align: center;
   color: white;
   border: solid $bg_color;
-  background-color: $bg_color;
+  //  background-color: $bg_color;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
 }
 </style>
