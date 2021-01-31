@@ -5,7 +5,8 @@
     <p v-html="boldText"></p>
     <button @click="inc(5, $event)">Click me</button>
     <p>{{ count }}</p>
-    <p>x = {{ x }}, y = {{ y }} <span @mousemove="dummy">Dead Spot</span></p>
+    <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
+    <input type="text" @keyup="alertMe">
   </div>
 </template>
 
@@ -34,9 +35,12 @@ export default {
       this.x = event.clientX;
       this.y = event.clientY;
     },
-    dummy(event) {
-      event.stopPropagation();
-    },
+    alertMe(event) {
+      console.log(event.keyCode);
+    }
+    // dummy(event) {
+    //   event.stopPropagation();
+    // },
   },
 };
 </script>
