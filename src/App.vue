@@ -6,7 +6,8 @@
     <button @click="inc(5, $event)">Click me</button>
     <p>{{ count }}</p>
     <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
-    <input type="text" @keyup="alertMe" v-model="text" />
+    <label for="text">请输入:</label>
+    <input id="text" type="text" @keyup="alertMe" v-model="text" />
   </div>
 </template>
 
@@ -51,6 +52,8 @@ $bg_color: blue;
 
 body {
   background-color: lightblue;
+  margin: 0;
+  border: 0;
 }
 
 a {
@@ -63,7 +66,7 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  margin-top: 60px;
+  border: solid $bg_color;
   background-color: $bg_color;
 }
 </style>
