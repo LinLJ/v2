@@ -7,7 +7,7 @@
   >
     <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
-    <p v-html="boldText"></p>
+    <p v-html="boldText" :style="myStyle"></p>
     <button @click.stop="inc(5, $event)">+5</button>
     <button @click.prevent="dec(5)">-5</button>
     <p>{{ count }}</p>
@@ -46,6 +46,11 @@ export default {
       return {
         red: this.divIsRed,
         blue: !this.divIsRed,
+      };
+    },
+    myStyle() {
+      return {
+        color: "deeppink",
       };
     },
   },
