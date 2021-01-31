@@ -6,7 +6,7 @@
     <button @click="inc(5, $event)">Click me</button>
     <p>{{ count }}</p>
     <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
-    <input type="text" @keyup="alertMe">
+    <input type="text" @keyup="alertMe" v-model="text" />
   </div>
 </template>
 
@@ -21,6 +21,7 @@ export default {
       count: 0,
       x: 0,
       y: 0,
+      text: "text",
     };
   },
   methods: {
@@ -37,7 +38,7 @@ export default {
     },
     alertMe(event) {
       console.log(event.keyCode);
-    }
+    },
     // dummy(event) {
     //   event.stopPropagation();
     // },
