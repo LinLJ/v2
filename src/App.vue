@@ -3,8 +3,10 @@
     <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
     <p v-html="boldText"></p>
-    <button @click="inc(5, $event)">Click me</button>
+    <button @click="inc(5, $event)">+5</button>
+    <button @click="dec(5)">-5</button>
     <p>{{ count }}</p>
+    <p v-if="tooLarge">{{ tooLarge }}</p>
     <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
     <label for="text">请输入:</label>
     <input id="text" type="text" @keyup="alertMe" v-model="text" />
@@ -25,12 +27,20 @@ export default {
       text: "text",
     };
   },
+  computed: {
+    tooLarge() {
+      return this.count >= 100 ? ">= 100" : null;
+    },
+  },
   methods: {
     sayHello() {
       return this.title;
     },
-    inc(d = 1) {
-      this.count += d;
+    inc(step = 1) {
+      this.count += step;
+    },
+    dec(step = 1) {
+      this.count -= step;
     },
     updatePos(event) {
       // console.log(event);
