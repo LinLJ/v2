@@ -3,7 +3,7 @@
     <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
     <p v-html="boldText"></p>
-    <button @click="inc(5)">Click me</button>
+    <button @click="inc(5, $event)">Click me</button>
     <p>{{ count }}</p>
     <p>x = {{ x }}, y = {{ y }}</p>
   </div>
@@ -26,7 +26,7 @@ export default {
     sayHello() {
       return this.title;
     },
-    inc(d = 1) {
+    inc(d = 1, _event) {
       this.count += d;
     },
     updatePos(event) {
