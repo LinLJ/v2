@@ -2,14 +2,14 @@
   <div
     id="app"
     @mousemove="updatePos"
-    :class="divClasses"
+    :class="[divClasses]"
     @click="divIsRed = !divIsRed"
   >
     <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
     <p v-html="boldText"></p>
-    <button @click="inc(5, $event)">+5</button>
-    <button @click="dec(5)">-5</button>
+    <button @click.stop="inc(5, $event)">+5</button>
+    <button @click.prevent="dec(5)">-5</button>
     <p>{{ count }}</p>
     <p v-if="tooLarge">{{ tooLarge }}</p>
     <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
@@ -30,7 +30,7 @@ export default {
       x: 0,
       y: 0,
       text: "text",
-      divIsRed: false,
+      divIsRed: null,
     };
   },
   computed: {
@@ -38,6 +38,11 @@ export default {
       return this.count >= 100 ? ">= 100" : null;
     },
     divClasses() {
+      if (this.divIsRed === null) {
+        return {
+          green: true,
+        };
+      }
       return {
         red: this.divIsRed,
         blue: !this.divIsRed,
@@ -103,6 +108,10 @@ a {
 
 .red {
   background-color: red;
+}
+
+.green {
+  background-color: green;
 }
 
 .blue {
