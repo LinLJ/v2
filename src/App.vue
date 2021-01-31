@@ -32,6 +32,11 @@ export default {
       return this.count >= 100 ? ">= 100" : null;
     },
   },
+  watch: {
+    count(value, oldValue) {
+      console.log(oldValue + " -> " + value);
+    },
+  },
   methods: {
     sayHello() {
       return this.title;
