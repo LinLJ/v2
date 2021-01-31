@@ -5,7 +5,7 @@
     <p v-html="boldText"></p>
     <button @click="inc(5, $event)">Click me</button>
     <p>{{ count }}</p>
-    <p>x = {{ x }}, y = {{ y }}</p>
+    <p>x = {{ x }}, y = {{ y }} <span @mousemove="dummy">Dead Spot</span></p>
   </div>
 </template>
 
@@ -26,13 +26,16 @@ export default {
     sayHello() {
       return this.title;
     },
-    inc(d = 1, _event) {
+    inc(d = 1) {
       this.count += d;
     },
     updatePos(event) {
       // console.log(event);
       this.x = event.clientX;
       this.y = event.clientY;
+    },
+    dummy(event) {
+      event.stopPropagation();
     },
   },
 };
