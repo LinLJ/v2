@@ -7,6 +7,22 @@ Vue.config.productionTip = false;
 let vm1 = new Vue({
   el: "#app",
   render: (h) => h(App),
+  beforeCreate() {
+    console.log("beforeCreate...");
+  },
+  created() {
+    console.log("created...");
+  },
+  beforeMount() {
+    console.log("beforeMount...");
+  },
+  mounted() {
+    console.log("mounted...");
+  },
+  beforeUpdate() {},
+  updated() {},
+  beforeDestroy() {},
+  destroyed() {},
 });
 
 new Vue({
