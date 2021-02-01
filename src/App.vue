@@ -11,7 +11,7 @@
     <button @click.stop="inc(5, $event)">+5</button>
     <button @click.prevent="dec(5)">-5</button>
     <p>{{ count }}</p>
-    <p v-if="tooLarge">{{ tooLarge }}</p>
+    <p v-show="tooLarge">{{ tooLarge }}</p>
     <template v-if="count < 0">
       <p>&lt; 0</p>
     </template>
