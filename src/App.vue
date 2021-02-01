@@ -7,7 +7,7 @@
   >
     <p v-once>{{ this.sayHello() }}</p>
     <a :href="link">qiuzhanghua</a>
-    <p v-html="boldText" :style="myStyle"></p>
+    <p v-html="boldText" :style="[myStyle, { backgroundColor: 'black' }]"></p>
     <button @click.stop="inc(5, $event)">+5</button>
     <button @click.prevent="dec(5)">-5</button>
     <p>{{ count }}</p>
