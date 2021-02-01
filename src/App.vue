@@ -32,12 +32,15 @@
     <!--      <h1 :key="person.name">{{ person.name }}</h1>-->
     <!--      <p :key="person.name">{{ i }}</p>-->
     <!--    </template>-->
+    <person-list :persons="persons"></person-list>
   </div>
 </template>
 
 <script>
+import PersonList from "@/components/PersonList";
 export default {
   name: "App",
+  components: { "person-list": PersonList },
   data() {
     return {
       title: "Hello Vue.js 2!",
