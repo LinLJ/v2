@@ -23,10 +23,15 @@
         {{ i + 1 }}. {{ person.name }}
       </li>
     </ul>
-    <template v-for="(person, i) in persons">
-      <h1 :key="person.name">{{ person.name }}</h1>
-      <p :key="person.name">{{ i }}</p>
-    </template>
+    <ul>
+      <li v-for="(person, i) in persons" :key="person.name">
+        {{ i }} <span v-for="(v, k) in person" :key="k">{{ v }} </span>
+      </li>
+    </ul>
+    <!--    <template v-for="(person, i) in persons">-->
+    <!--      <h1 :key="person.name">{{ person.name }}</h1>-->
+    <!--      <p :key="person.name">{{ i }}</p>-->
+    <!--    </template>-->
   </div>
 </template>
 
