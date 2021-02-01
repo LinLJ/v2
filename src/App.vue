@@ -12,6 +12,9 @@
     <button @click.prevent="dec(5)">-5</button>
     <p>{{ count }}</p>
     <p v-if="tooLarge">{{ tooLarge }}</p>
+    <template v-if="count < 0">
+      <p>&lt; 0</p>
+    </template>
     <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
     <label for="text">请输入:</label>
     <input id="text" type="text" @keyup="alertMe" v-model="text" />
@@ -89,7 +92,7 @@ export default {
 </script>
 
 <style lang="scss">
-$bg_color: blue;
+$bg_color: #0000ff;
 
 body {
   background-color: lightblue;
@@ -112,7 +115,7 @@ a {
 }
 
 .red {
-  background-color: red;
+  background-color: #ff0000;
 }
 
 .green {
