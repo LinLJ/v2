@@ -18,6 +18,11 @@
     <p>x = {{ x }}, y = {{ y }} <span @mousemove.stop>Dead Spot</span></p>
     <label for="text">请输入:</label>
     <input id="text" type="text" @keyup="alertMe" v-model="text" />
+    <ul>
+      <li v-for="(person, i) in persons" :key="person.name">
+        {{ i + 1 }}. {{ person.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -34,6 +39,18 @@ export default {
       y: 0,
       text: "text",
       divIsRed: null,
+      persons: [
+        {
+          name: "Daniel",
+          age: 50,
+          color: "blue",
+        },
+        {
+          name: "Eason",
+          age: 7,
+          color: "purple",
+        },
+      ],
     };
   },
   computed: {
