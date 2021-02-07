@@ -11,8 +11,8 @@ export default {
   watch: {
     title() {
       console.log("......" + this.$refs["to"].innerHTML);
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -12,12 +12,15 @@ export default {
   methods: {
     resetName() {
       this.$emit("nameReset", {
-        newVal: this.person.name.split("").reverse().join(""),
-        oldVal: this.person.name,
+        newVal: this.person.name
+          .split("")
+          .reverse()
+          .join(""),
+        oldVal: this.person.name
       });
       // this.person.name = this.person.name.split("").reverse().join("");
-    },
-  },
+    }
+  }
 };
 </script>
 

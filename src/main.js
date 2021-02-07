@@ -6,7 +6,7 @@ Vue.config.productionTip = false;
 
 let vm1 = new Vue({
   el: "#app",
-  render: (h) => h(App),
+  render: h => h(App),
   beforeCreate() {
     console.log("beforeCreate...");
   },
@@ -22,12 +22,12 @@ let vm1 = new Vue({
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
-  destroyed() {},
+  destroyed() {}
 });
 
 new Vue({
   el: "#app2",
-  render: (createElement) => createElement(App2),
+  render: createElement => createElement(App2)
 });
 
 console.log(vm1);

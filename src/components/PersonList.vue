@@ -14,10 +14,10 @@ export default {
   components: { "person-item": PersonItem },
   methods: {
     handleNameReset(event) {
-      let found = this.persons.find((p) => p.name === event.oldVal);
+      let found = this.persons.find(p => p.name === event.oldVal);
       found.name = event.newVal;
-    },
-  },
+    }
+  }
 };
 </script>
 

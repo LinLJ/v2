@@ -55,14 +55,14 @@ export default {
         {
           name: "Daniel",
           age: 50,
-          color: "blue",
+          color: "blue"
         },
         {
           name: "Eason",
           age: 7,
-          color: "purple",
-        },
-      ],
+          color: "purple"
+        }
+      ]
     };
   },
   computed: {
@@ -72,19 +72,19 @@ export default {
     divClasses() {
       if (this.divIsRed === null) {
         return {
-          green: true,
+          green: true
         };
       }
       return {
         red: this.divIsRed,
-        blue: !this.divIsRed,
+        blue: !this.divIsRed
       };
     },
     myStyle() {
       return {
-        color: "deeppink",
+        color: "deeppink"
       };
-    },
+    }
   },
   watch: {
     count(value, oldValue) {
@@ -93,7 +93,7 @@ export default {
       // setTimeout(function () {
       //   that.count = 0;
       // }, 2000);
-    },
+    }
   },
   methods: {
     sayHello() {
@@ -112,11 +112,11 @@ export default {
     },
     alertMe(event) {
       console.log(event.keyCode);
-    },
+    }
     // dummy(event) {
     //   event.stopPropagation();
     // },
-  },
+  }
 };
 </script>
 
